@@ -8,6 +8,9 @@ export async function loadStateData(stateId) {
         return module.data;
     } catch (error) {
         console.warn(`Dados não encontrados para o estado: ${stateId}`, error);
-        return null;
+        return {
+            name: stateId,
+            media: []
+        };
     }
 }
