@@ -1,16 +1,23 @@
-// loadStateData.js - Carrega dinamicamente os dados de um estado
+// loadStateData.js - Carrega dinamicamente os dados de um estado usando import.meta.glob
+
+const modules = import.meta.glob('./*.js');
 
 export async function loadStateData(stateId) {
+    const cleanId = stateId.toLowerCase().replace(/\s+/g, '');
+    const path = `./${cleanId}.js`;
+
+    const loader = modules[path];
+
+    if (!loader) {
+        console.warn(`⚠️ Nenhum módulo encontrado para o estado: ${stateId}`);
+        return null;
+    }
+
     try {
-        const cleanId = stateId.toLowerCase().replace(/\s+/g, '');
-        // @vite-ignore
-        const module = await import(/* @vite-ignore */ `./${cleanId}.js`);
-        return module.data;
+        const module = await loader();
+        return module.data || null;
     } catch (error) {
-        console.warn(`Dados não encontrados para o estado: ${stateId}`, error);
-        return {
-            name: stateId,
-            media: []
-        };
+        console.error(`❌ Erro ao carregar dados de ${stateId}:`, error);
+        return null;
     }
 }
