@@ -1,21 +1,30 @@
+// texas.js
 export const data = {
-  "name": "Texas",
-  "media": [
+  name: "Texas",
+  media: [
     {
-      "type": "Filme",
-      "title": "No Country for Old Men",
-      "description": "Um caçador encontra uma mala cheia de dinheiro no deserto do Texas, desencadeando uma perseguição brutal.",
-      "cover": "https://image.tmdb.org/t/p/w500/oHwSg2uC1rNqY9oP5YF30N4S7R0.jpg",
-      "rating": "8.2/10",
-      "imdbLink": "https://www.imdb.com/title/tt0477080/"
+      type: "Filme",
+      title: "Dallas Buyers Club",
+      description: "Baseado em fatos reais, sobre um eletricista que luta contra o HIV.",
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Dallas_Buyers_Club_poster.jpg/220px-Dallas_Buyers_Club_poster.jpg",
+      rating: "8.0",
+      imdbLink: "https://www.imdb.com/title/tt0790636/"
     },
     {
-      "type": "Série",
-      "title": "Friday Night Lights",
-      "description": "Drama realista sobre a vida de um time de futebol americano escolar e a comunidade de Dillon, Texas.",
-      "cover": "https://image.tmdb.org/t/p/w500/q3UvS1K8uB5oY9J5M7X5zJ7R7eP.jpg",
-      "rating": "8.7/10",
-      "imdbLink": "https://www.imdb.com/title/tt0758745/"
+      type: "Filme",
+      title: "No Country for Old Men",
+      description: "Thriller de crime ambientado na fronteira do Texas.",
+      cover: "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg",
+      rating: "8.1",
+      imdbLink: "https://www.imdb.com/title/tt0477348/"
+    },
+    {
+      type: "Série",
+      title: "Friday Night Lights",
+      description: "Drama sobre futebol americano em uma pequena cidade do Texas.",
+      cover: "https://upload.wikimedia.org/wikipedia/en/9/9b/Friday_Night_Lights_poster.jpg",
+      rating: "8.6",
+      imdbLink: "https://www.imdb.com/title/tt0758746/"
     }
   ]
 };
