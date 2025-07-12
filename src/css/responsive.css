@@ -1,0 +1,101 @@
+/* responsive.css - Media Queries para responsividade */
+
+/* Responsividade para a barra de pesquisa */
+@media (max-width: 600px) {
+    #search-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    #search-input {
+        width: 90%;
+    }
+    #search-button {
+        width: 90%;
+    }
+    .media-body {
+        flex-direction: column; /* Capa em cima, texto embaixo */
+        align-items: center;
+    }
+    .media-info {
+        align-items: center; /* Centraliza informações em telas menores */
+    }
+    .media-cover {
+        margin-bottom: 10px;
+    }
+}
+
+/* Telas muito pequenas (celulares em modo retrato, até 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    #map-container {
+        min-height: 350px;
+        padding: 10px;
+    }
+
+    .state-title {
+        font-size: 1.4em;
+    }
+
+    .media-item {
+        padding: 8px 10px;
+        border-left-width: 3px;
+    }
+
+    .media-cover {
+        width: 60px;
+    }
+
+    .media-info {
+        margin-top: 5px;
+    }
+
+    .media-rating {
+        padding: 2px 6px;
+        font-size: 0.8em;
+    }
+
+    .imdb-link {
+        font-size: 0.8em;
+    }
+}
+
+/* Telas pequenas (celulares em modo paisagem e tablets pequenos, 481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    #map-container {
+        min-height: 450px;
+        padding: 20px;
+    }
+
+    .state-title {
+        font-size: 1.6em;
+    }
+
+    .media-cover {
+        width: 70px;
+    }
+}
+
+/* Telas médias (tablets maiores e laptops, 769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #map-container,
+    #details-container {
+        width: 90vw;
+    }
+}
+
+/* Telas grandes (desktops, acima de 1024px) */
+@media (min-width: 1025px) {
+    #map-container,
+    #details-container {
+        width: 80vw;
+    }
+}

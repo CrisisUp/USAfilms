@@ -1,0 +1,87 @@
+/* map.css - Estilos específicos do mapa SVG */
+
+#usa-map {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para os estados no SVG */
+.state {
+    fill: #4a6a8a; /* Azul acinzentado suave, cor padrão para todos os estados */
+    stroke: #0d1a2a; /* Contorno mais escuro para separação */
+    stroke-width: 0.8px;
+    transition: fill 0.3s ease, transform 0.3s ease;
+    transform-origin: center center;
+}
+
+/* Estilo de foco para acessibilidade */
+.state:focus {
+    outline: 3px solid #ff00ff; /* Roxo vibrante para acessibilidade no foco */
+    outline-offset: 2px;
+}
+
+/* Cores personalizadas para estados específicos */
+#MA { fill: #8B4513; } /* Sela */
+#NY { fill: #483D8B; } /* Azul Ardósia Escuro */
+#TX { fill: #B22222; } /* Tijolo de Fogo */
+#CA { fill: #2E8B57; } /* Verde Mar */
+#FL { fill: #800080; } /* Roxo */
+#WA { fill: #008B8B; } /* Ciano Escuro */
+#IL { fill: #B8860B; } /* Ouro Escuro */
+#CO { fill: #8B0000; } /* Vermelho Escuro */
+#AZ { fill: #D2691E; } /* Chocolate */
+#MN { fill: #5F9EA0; } /* Azul Cadete */
+#MT { fill: #CD853F; } /* Peru */
+#ND { fill: #6A5ACD; } /* Azul Ardósia */
+#ID { fill: #708090; } /* Azul Ardósia Cinza */
+#NV { fill: #8B008B; } /* Magenta Escuro */
+#NM { fill: #A0522D; } /* Sienna */
+#OR { fill: #20B2AA; } /* Verde Mar Claro */
+#UT { fill: #8FBC8F; } /* Verde Mar Escuro */
+#WY { fill: #DAA520; } /* Dourado Sólido */
+#AR { fill: #CD5C5C; } /* Vermelho Indiano */
+#IA { fill: #4682B4; } /* Azul Aço */
+#KS { fill: #D2B48C; } /* Tan */
+#MO { fill: #808000; } /* Oliva */
+#NE { fill: #BC8F8F; } /* RosyBrown */
+#OK { fill: #DC143C; } /* Crimson */
+#SD { fill: #6B8E23; } /* OliveDrab */
+#LA { fill: #A52A2A; } /* Marrom */
+#CT { fill: #5F9EA0; } /* Azul Cadete */
+#NH { fill: #8B4513; } /* Sela */
+#RI { fill: #483D8B; } /* Azul Ardósia Escuro */
+#VT { fill: #B22222; } /* Tijolo de Fogo */
+#AL { fill: #2E8B57; } /* Verde Mar */
+#GA { fill: #800080; } /* Roxo */
+#MS { fill: #008B8B; } /* Ciano Escuro */
+#SC { fill: #B8860B; } /* Ouro Escuro */
+#IL { fill: #8B0000; } /* Vermelho Escuro */
+#IN { fill: #D2691E; } /* Chocolate */
+#KY { fill: #5F9EA0; } /* Azul Cadete */
+#NC { fill: #CD853F; } /* Peru */
+#OH { fill: #6A5ACD; } /* Azul Ardósia */
+#TN { fill: #708090; } /* Azul Ardósia Cinza */
+#VA { fill: #8B008B; } /* Magenta Escuro */
+#WI { fill: #A0522D; } /* Sienna */
+#WV { fill: #20B2AA; } /* Verde Mar Claro */
+#DE { fill: #8FBC8F; } /* Verde Mar Escuro */
+#DC { fill: #DAA520; } /* Dourado Sólido */
+#MD { fill: #CD5C5C; } /* Vermelho Indiano */
+#NJ { fill: #4682B4; } /* Azul Aço */
+#PA { fill: #D2B48C; } /* Tan */
+#ME { fill: #808000; } /* Oliva */
+#AK { fill: #778899; } /* Azul Ardósia Claro */
+#HI { fill: #DB7093; } /* PaleVioletRed */
+
+/* REGRAS DE HOVER e SELECTED (MAIS ESPECÍFICAS) */
+.state:hover {
+    fill: #66ccff; /* Azul vibrante no hover para todos */
+    cursor: pointer;
+    transform: scale(1.03); /* Aumenta um pouco mais no hover */
+}
+
+.state.selected {
+    fill: #ffcc00; /* Amarelo/dourado para o estado selecionado */
+    stroke: #e0e0e0; /* Contorno claro para o selecionado */
+    stroke-width: 1.5px;
+}

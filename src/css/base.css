@@ -1,0 +1,30 @@
+/* base.css - Estilos globais e básicos */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #1a2a3a, #0d1a2a);
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #ffcc00;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Container principal para o mapa e detalhes */
+#main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96vw;
+    max-width: 1400px;
+}

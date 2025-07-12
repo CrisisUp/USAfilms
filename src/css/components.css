@@ -1,0 +1,138 @@
+/* components.css - Estilos para componentes UI (barra de busca, itens de mídia) */
+
+#search-container {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    width: 96vw;
+    max-width: 1400px;
+    justify-content: center;
+}
+
+#search-input {
+    padding: 12px 15px;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+    background-color: #3a4a5a;
+    color: #e0e0e0;
+    font-size: 1em;
+    width: 70%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#search-input::placeholder {
+    color: #b0b0b0;
+}
+
+#search-input:focus {
+    border-color: #66ccff;
+    box-shadow: 0 0 5px rgba(102, 204, 255, 0.5);
+}
+
+#search-button {
+    padding: 12px 20px;
+    background-color: #ffcc00;
+    color: #1a2a3a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#search-button:hover {
+    background-color: #e0b300;
+    transform: translateY(-2px);
+}
+
+.state-title {
+    color: #66ccff;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 1px solid #4a5a6a;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.media-list {
+    list-style: none;
+    padding: 0;
+}
+
+.media-item {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background-color: #3a4a5a;
+    border-radius: 5px;
+    border-left: 4px solid #ffcc00;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-item strong {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+.media-item em {
+    color: #b0b0b0;
+    font-size: 0.9em;
+}
+
+.media-header {
+    margin-bottom: 8px;
+}
+
+.media-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.media-cover {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.media-description {
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+.media-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.85em;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.media-rating {
+    background-color: #ffcc00;
+    color: #1a2a3a;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.imdb-link {
+    color: #66ccff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.imdb-link:hover {
+    text-decoration: underline;
+    color: #a0e0ff;
+}

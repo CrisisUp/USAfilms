@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando os EUA: Filmes e Séries por Estado</title>
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/map.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/animations.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+</head>
+<body>
+    <main>
+        <h1>Explorando os EUA: Filmes e Séries por Estado</h1>
+
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Buscar estado ou filme..."
+                aria-label="Campo de busca por estado ou filme">
+            <button id="search-button" aria-label="Botão de busca">Buscar</button>
+        </div>
+
+        <div id="main-content-container">
+            <div id="map-container">
+                <p id="map-loading-message">Carregando mapa...</p>
+            </div>
+
+            <div id="details-container">
+                <h2 class="state-title" id="selected-state-title">Clique em um estado para ver os filmes e séries!</h2>
+                <ul class="media-list" id="media-list">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
