@@ -16,6 +16,14 @@ export const data = {
       "cover": "images/Florida/scarface.png",
       "rating": "8.3/10",
       "imdbLink": "https://www.imdb.com/title/tt0086250/"
+    },
+    {
+      "type": "Série",
+      "title": "Dexter",
+      "description": "Um analista forense de sangue da polícia de Miami, Dexter Morgan, secretamente é um serial killer que caça outros assassinos. A série explora o contraste entre a vida ensolarada de Miami e o lado sombrio do protagonista.",
+      "cover": "images/Florida/dexter.png",
+      "rating": "8.7/10", // IMDB rating médio da série
+      "imdbLink": "https://www.imdb.com/pt/title/tt0773262/"
     }
   ]
 };
