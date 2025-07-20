@@ -13,7 +13,7 @@ function readMediaItem(item) {
         if (item.rating) {
             // Esta formatação é para a leitura completa pelo botão
             // Troca ponto por "ponto" e /10 por "de dez"
-            formattedRating = `Nota: ${item.rating.replace('.', ' ponto ');
+            formattedRating = `Nota: ${item.rating.replace('.', ' ponto ').replace('/10', '')}.`;
         }
 
         const textToRead = `
