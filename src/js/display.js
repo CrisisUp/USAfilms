@@ -3,7 +3,7 @@
 import { escapeHTML } from './utils.js';
 
 
-// NOVA FUNÇÃO PARA LER O CONTEÚDO DO CARD
+// NOVA FUNÇÃO PARA LER O CONTEÚDO DO CARD (MANTIDA COMO ESTÁ PARA LEITURA VIA BOTÃO)
 function readMediaItem(item) {
     if ('speechSynthesis' in window) {
         const synth = window.speechSynthesis;
@@ -21,20 +21,12 @@ function readMediaItem(item) {
             ${formattedRating}
         `;
 
-        // Se já estiver falando, pare a fala atual
         if (synth.speaking) {
             synth.cancel();
         }
 
         const utterance = new SpeechSynthesisUtterance(textToRead);
-
-        // Opcional: Configurar idioma (voz em português do Brasil)
         utterance.lang = 'pt-BR';
-
-        // Opcional: Ajustar taxa de fala e tom
-        // utterance.rate = 1; // 0.1 a 10 (padrão é 1)
-        // utterance.pitch = 1; // 0 a 2 (padrão é 1)
-
         synth.speak(utterance);
     } else {
         console.warn('API de Síntese de Fala não suportada neste navegador.');
@@ -53,9 +45,9 @@ export function displayStateDetails(stateId, data) {
     const selectedStateTitle = document.getElementById('selected-state-title');
     const detailsContainer = document.getElementById('details-container');
 
-    detailsContainer.classList.remove('show'); // Remove para reiniciar animação
+    detailsContainer.classList.remove('show');
 
-    mediaList.innerHTML = ''; // Limpa a lista anterior
+    mediaList.innerHTML = '';
 
     if (data && data.media && data.media.length > 0) {
         selectedStateTitle.textContent = `${escapeHTML(data.name || stateId)}: Filmes e Séries`;
@@ -64,14 +56,12 @@ export function displayStateDetails(stateId, data) {
             const li = document.createElement('li');
             li.classList.add('media-item');
 
-            // Adicionando classe para a borda do li
             if (item.type === 'Filme') {
                 li.classList.add('type-movie-border');
             } else if (item.type === 'Série') {
                 li.classList.add('type-series-border');
             }
 
-            // --- Criação do Header ---
             const mediaHeader = document.createElement('div');
             mediaHeader.classList.add('media-header');
 
@@ -88,20 +78,17 @@ export function displayStateDetails(stateId, data) {
             titleSpan.textContent = ` ${escapeHTML(item.title || 'Título Desconhecido')}`;
             mediaHeader.appendChild(titleSpan);
 
-            // *** BOTÃO DE LEITURA (SEM ALTERAÇÕES AQUI) ***
             const readButton = document.createElement('button');
             readButton.classList.add('read-aloud-button');
-            readButton.innerHTML = '🔊'; // Ícone de som, você pode usar um SVG ou Font Awesome
+            readButton.innerHTML = '🔊';
             readButton.setAttribute('aria-label', `Ler sobre ${escapeHTML(item.title)}`);
             readButton.addEventListener('click', () => {
-                readMediaItem(item); // Chama a função de leitura
+                readMediaItem(item);
             });
             mediaHeader.appendChild(readButton);
-            // ***************************
 
             li.appendChild(mediaHeader);
 
-            // --- Criação do Body ---
             const mediaBody = document.createElement('div');
             mediaBody.classList.add('media-body');
 
@@ -125,10 +112,13 @@ export function displayStateDetails(stateId, data) {
             if (item.rating && typeof item.rating === 'string') {
                 const ratingSpan = document.createElement('span');
                 ratingSpan.classList.add('media-rating');
-                ratingSpan.textContent = `Nota: ${escapeHTML(item.rating)}`;
 
-                // *** AQUI É ONDE ADICIONAMOS O ARIA-LABEL PARA A NOTA VISÍVEL ***
-                // Formata a string para que o leitor de tela pronuncie corretamente
+                // *** MUDANÇA PRINCIPAL AQUI: MODIFICAR O TEXTCONTENT ***
+                // Substitui ponto por vírgula e /10 por 'de 10' para melhor leitura
+                const displayRating = item.rating.replace('.', ',').replace('/10', ' de 10');
+                ratingSpan.textContent = `Nota: ${escapeHTML(displayRating)}`;
+
+                // Mantemos o aria-label para redundância e para garantir a pronúncia completa em alguns casos
                 const accessibleRatingText = item.rating.replace('.', ' ponto ').replace('/10', ' de dez');
                 ratingSpan.setAttribute('aria-label', `Nota ${accessibleRatingText}`);
                 // ************************************************************
@@ -142,7 +132,7 @@ export function displayStateDetails(stateId, data) {
                 imdbLinkA.target = '_blank';
                 imdbLinkA.classList.add('imdb-link');
                 imdbLinkA.textContent = 'Ver no IMDb';
-                imdbLinkA.setAttribute('aria-label', `Abrir link do IMDb para ${escapeHTML(item.title)}`); // Boa prática: adicionar aria-label ao link também
+                imdbLinkA.setAttribute('aria-label', `Abrir link do IMDb para ${escapeHTML(item.title)}`);
                 mediaInfoDiv.appendChild(imdbLinkA);
             }
 
