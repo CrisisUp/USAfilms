@@ -1,0 +1,19 @@
+/* src/css/main.css - Exemplo se _variables.css estiver em base/ e não for importado por base.css */
+
+@import url('./base/_variables.css'); /* Garante que as variáveis são carregadas primeiro */
+@import url('./base.css'); /* Se houver outros estilos em base.css */
+@import url('./layout.css');
+@import url('./map.css');
+
+/* --- Importando os arquivos da pasta components --- */
+@import url('./components/_search.css');
+@import url('./components/_media-item.css');
+@import url('./components/_buttons.css');
+/* ------------------------------------------------ */
+
+@import url('./animations.css');
+@import url('./responsive.css');
+
+body {
+    font-family: Arial, sans-serif;
+}

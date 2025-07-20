@@ -1,8 +1,10 @@
+// main.js
+
 import { initMapInteractions } from './map-interactions.js';
 import { initSearch } from './search.js';
 import { displayStateDetails } from './display.js';
-import { resetStateHighlights } from './map-interactions.js';
 import { loadStateData } from './data/loadStateData.js';
+import { initAutocomplete } from './autocomplete.js'; // Importe o novo módulo
 
 document.addEventListener('DOMContentLoaded', async () => {
     const mapContainer = document.getElementById('map-container');
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         initSearch(usaMap);
+        initAutocomplete(); // Chame a função de autocompletar aqui!
 
     } catch (error) {
         console.error('Erro na inicialização ou carregamento do mapa:', error);

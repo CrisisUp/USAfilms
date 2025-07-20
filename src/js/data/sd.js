@@ -2,20 +2,20 @@ export const data = {
   "name": "Dakota do Sul",
   "media": [
     {
-      "type": "Série",
-      "title": "Deadwood",
-      "description": "Um drama de faroeste que retrata a vida em uma cidade sem lei nas Colinas Negras de Dakota do Sul.",
-      "cover": "https://image.tmdb.org/t/p/w500/t0x1y2z3a4b5c6d7e8f9g0h1i2j.jpg",
-      "rating": "8.6/10",
-      "imdbLink": "https://www.imdb.com/title/tt0349909/"
+      "type": "Filme",
+      "title": "Dança com Lobos",
+      "description": "Um tenente da cavalaria da Guerra Civil Americana faz amizade com uma tribo Sioux e se integra à sua cultura, explorando as vastas paisagens da fronteira. Vencedor de múltiplos Oscars.",
+      "cover": "images/Dakota-do-Sul/danca-com-lobos.png",
+      "rating": "8.0/10",
+      "imdbLink": "https://www.imdb.com/title/tt0099348/"
     },
     {
-      "type": "Filme",
-      "title": "O Voo do Dragão",
-      "description": "Um piloto tenta provar a existência de dragões, com uma parte da história se passando em Dakota do Sul.",
-      "cover": "https://image.tmdb.org/t/p/w500/v0w1x2y3z4a5b6c7d8e9f0g1h2i.jpg",
-      "rating": "6.3/10",
-      "imdbLink": "https://www.imdb.com/title/tt0097241/"
+      "type": "Série",
+      "title": "Deadwood",
+      "description": "Ambientada na caótica e violenta cidade de Deadwood, Dakota do Sul, durante a corrida do ouro de 1876, a série segue a vida de seus moradores e figuras históricas como Wild Bill Hickok e Calamity Jane.",
+      "cover": "images/Dakota-do-Sul/deadwood.png",
+      "rating": "8.6/10",
+      "imdbLink": "https://www.imdb.com/pt/title/tt0348914/"
     }
   ]
 };

@@ -1,0 +1,15 @@
+/* css/base/_variables.css */
+
+/* Variáveis CSS para cores e outros valores globais */
+:root {
+    --color-primary: #ffcc00; /* Amarelo principal (rating, botões, bordas de filme) */
+    --color-secondary: #66ccff; /* Azul claro (títulos de seção, links, bordas de série) */
+    --color-dark-bg: #1a2a3a; /* Fundo escuro */
+    --color-medium-bg: #3a4a5a; /* Fundo de componentes (itens de mídia, input) */
+    --color-text-light: #e0e0e0; /* Texto claro (títulos de mídia) */
+    --color-text-medium: #b0b0b0; /* Texto médio (descrições, placeholders) */
+    --color-text-dark: #1a2a3a; /* Texto escuro (usado no rating/botão) */
+
+    --color-movie-type: #FFD700; /* Dourado para o tipo "Filme" */
+    --color-series-type: #00BFFF; /* Azul vibrante para o tipo "Série" */
+}

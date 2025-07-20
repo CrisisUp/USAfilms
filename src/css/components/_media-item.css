@@ -1,0 +1,130 @@
+/* css/components/_media-item.css */
+
+.state-title {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 1px solid #4a5a6a; /* Considere usar uma variável aqui se tiver uma cor similar */
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.media-list {
+    list-style: none;
+    padding: 0;
+}
+
+.media-item {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background-color: var(--color-medium-bg);
+    border-radius: 5px;
+    border-left: 4px solid var(--color-primary); /* Cor padrão da borda: amarela (ajustada por tipo abaixo) */
+    display: flex;
+    flex-direction: column;
+}
+
+.media-item strong {
+    color: var(--color-text-light); /* Para o tipo ("Filme", "Série") */
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+.media-item em {
+    color: var(--color-text-medium); /* Para o título do item */
+    font-size: 0.9em;
+}
+
+.media-header {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.media-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.media-cover {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.media-description {
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: var(--color-text-medium);
+    margin: 0;
+}
+
+.media-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.85em;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.media-rating {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.imdb-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.imdb-link:hover {
+    text-decoration: underline;
+    color: #a0e0ff; /* Ajustar para uma variável se houver uma cor de hover definida */
+}
+
+/* Cor para a palavra "Filme" e "Série" */
+.media-item strong.type-movie {
+    color: var(--color-movie-type);
+}
+
+.media-item strong.type-series {
+    color: var(--color-series-type);
+}
+
+/* Cor da borda para Filmes e Séries */
+.media-item.type-movie-border {
+    border-left-color: var(--color-primary);
+}
+
+.media-item.type-series-border {
+    border-left-color: var(--color-secondary);
+}
+
+/* Estilo para o botão de leitura */
+.read-aloud-button {
+    background: none;
+    border: none;
+    color: var(--color-text-light); /* Cor do ícone */
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o botão para a direita */
+    transition: transform 0.2s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.read-aloud-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,23 @@
+/* css/components/_buttons.css */
+
+#search-button {
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-dark-bg);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#search-button:hover {
+    background-color: var(--color-primary);
+    filter: brightness(90%); /* Escurece um pouco no hover */
+    transform: translateY(-2px);
+}
+
+/* Adicione outros estilos de botão aqui, se tiver: */
+/* .primary-button { ... } */
+/* .secondary-button { ... } */

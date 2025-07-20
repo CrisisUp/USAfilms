@@ -6,7 +6,7 @@ export const data = {
       type: "Filme",
       title: "Dallas Buyers Club",
       description: "Baseado em fatos reais, sobre um eletricista que luta contra o HIV.",
-      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Dallas_Buyers_Club_poster.jpg/220px-Dallas_Buyers_Club_poster.jpg",
+      cover: "images/Texas/clube-de-compras-dallas.png",
       rating: "8.0",
       imdbLink: "https://www.imdb.com/title/tt0790636/"
     },
@@ -14,7 +14,7 @@ export const data = {
       type: "Filme",
       title: "No Country for Old Men",
       description: "Thriller de crime ambientado na fronteira do Texas.",
-      cover: "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg",
+      cover: "images/Texas/onde-os-fracos-nao-tem-vez.png",
       rating: "8.1",
       imdbLink: "https://www.imdb.com/title/tt0477348/"
     },
@@ -22,9 +22,9 @@ export const data = {
       type: "Série",
       title: "Friday Night Lights",
       description: "Drama sobre futebol americano em uma pequena cidade do Texas.",
-      cover: "https://upload.wikimedia.org/wikipedia/en/9/9b/Friday_Night_Lights_poster.jpg",
+      cover: "images/Texas/friday-night-lights.png",
       rating: "8.6",
-      imdbLink: "https://www.imdb.com/title/tt0758746/"
+      imdbLink: "https://www.imdb.com/pt/title/tt0758745/?ref_=fn_rvi_i_2"
     }
   ]
 };
