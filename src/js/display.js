@@ -8,21 +8,17 @@ function readMediaItem(item) {
     if ('speechSynthesis' in window) {
         const synth = window.speechSynthesis;
 
-        // Formata a nota para ser lida corretamente
+        // Formata a nota para ser lida corretamente na leitura do botão
         let formattedRating = '';
         if (item.rating) {
-            // Substitui o ponto por vírgula e adiciona "nota" antes
-            formattedRating = `Nota: ${item.rating.replace('.', ' vírgula ').replace('/10', ' de dez')}.`;
-            // Ou, se preferir apenas substituir o ponto por vírgula:
-            // formattedRating = `Nota: ${item.rating.replace('.', ',')}.`;
-            // Ou, se quiser que ele diga "sete ponto cinco":
-            // formattedRating = `Nota: ${item.rating.replace('.', ' ponto ')}.`;
+            // Substitui o ponto por "ponto" e a barra por "de" para leitura clara
+            formattedRating = `Nota: ${item.rating.replace('.', ' ponto ').replace('/10', ' de dez')}.`;
         }
 
         const textToRead = `
             ${item.type === 'Filme' ? 'Filme' : 'Série'}: ${item.title}.
             Descrição: ${item.description}.
-            ${formattedRating} 
+            ${formattedRating}
         `;
 
         // Se já estiver falando, pare a fala atual
@@ -92,7 +88,7 @@ export function displayStateDetails(stateId, data) {
             titleSpan.textContent = ` ${escapeHTML(item.title || 'Título Desconhecido')}`;
             mediaHeader.appendChild(titleSpan);
 
-            // *** NOVO: BOTÃO DE LEITURA ***
+            // *** BOTÃO DE LEITURA (SEM ALTERAÇÕES AQUI) ***
             const readButton = document.createElement('button');
             readButton.classList.add('read-aloud-button');
             readButton.innerHTML = '🔊'; // Ícone de som, você pode usar um SVG ou Font Awesome
@@ -130,6 +126,13 @@ export function displayStateDetails(stateId, data) {
                 const ratingSpan = document.createElement('span');
                 ratingSpan.classList.add('media-rating');
                 ratingSpan.textContent = `Nota: ${escapeHTML(item.rating)}`;
+
+                // *** AQUI É ONDE ADICIONAMOS O ARIA-LABEL PARA A NOTA VISÍVEL ***
+                // Formata a string para que o leitor de tela pronuncie corretamente
+                const accessibleRatingText = item.rating.replace('.', ' ponto ').replace('/10', ' de dez');
+                ratingSpan.setAttribute('aria-label', `Nota ${accessibleRatingText}`);
+                // ************************************************************
+
                 mediaInfoDiv.appendChild(ratingSpan);
             }
 
@@ -139,6 +142,7 @@ export function displayStateDetails(stateId, data) {
                 imdbLinkA.target = '_blank';
                 imdbLinkA.classList.add('imdb-link');
                 imdbLinkA.textContent = 'Ver no IMDb';
+                imdbLinkA.setAttribute('aria-label', `Abrir link do IMDb para ${escapeHTML(item.title)}`); // Boa prática: adicionar aria-label ao link também
                 mediaInfoDiv.appendChild(imdbLinkA);
             }
 
@@ -157,4 +161,3 @@ export function displayStateDetails(stateId, data) {
         detailsContainer.classList.add('show');
     }, 50);
 }
-
