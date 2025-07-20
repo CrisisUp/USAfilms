@@ -11,7 +11,8 @@ function readMediaItem(item) {
         // Formata a nota para ser lida corretamente na leitura do botão
         let formattedRating = '';
         if (item.rating) {
-            // Substitui o ponto por "ponto" e a barra por "de" para leitura clara
+            // Esta formatação é para a leitura completa pelo botão
+            // Troca ponto por "ponto" e /10 por "de dez"
             formattedRating = `Nota: ${item.rating.replace('.', ' ponto ').replace('/10', ' de dez')}.`;
         }
 
@@ -113,13 +114,14 @@ export function displayStateDetails(stateId, data) {
                 const ratingSpan = document.createElement('span');
                 ratingSpan.classList.add('media-rating');
 
-                // *** MUDANÇA PRINCIPAL AQUI: MODIFICAR O TEXTCONTENT ***
-                // Substitui ponto por vírgula e /10 por 'de 10' para melhor leitura
-                const displayRating = item.rating.replace('.', ',').replace('/10', ' de 10');
-                ratingSpan.textContent = `Nota: ${escapeHTML(displayRating)}`;
+                // *** NOVA MUDANÇA PRINCIPAL AQUI: SIMPLIFICAR TEXTCONTENT E ARIA-LABEL ***
+                // Remove "/10" e substitui ponto por vírgula para exibir "8,2"
+                const simpleRating = item.rating.replace('/10', '').replace('.', ',');
+                ratingSpan.textContent = `Nota: ${escapeHTML(simpleRating)}`;
 
-                // Mantemos o aria-label para redundância e para garantir a pronúncia completa em alguns casos
-                const accessibleRatingText = item.rating.replace('.', ' ponto ').replace('/10', ' de dez');
+                // Simplifica o aria-label para corresponder ao texto visível,
+                // usando "vírgula" para pronúncia clara.
+                const accessibleRatingText = simpleRating.replace(',', ' vírgula ');
                 ratingSpan.setAttribute('aria-label', `Nota ${accessibleRatingText}`);
                 // ************************************************************
 
